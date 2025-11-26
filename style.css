@@ -36,6 +36,7 @@ main button {
     cursor: pointer;
     background-color: #008000;
     border: none;
+    border-radius: 4px;
 }
 
 main #open-modal {
@@ -44,11 +45,10 @@ main #open-modal {
 
 main #modal-wrapper {
     padding: 1rem;
-    text-align: center;
 }
 
 main #modal #close-modal {
-    align-self: flex-end;
+    /* float: right; */
 }
 
 main #modal form .form-section {
@@ -60,9 +60,8 @@ main #modal form .form-section #checkbox-control {
     font-weight: bold;
     line-height: 1.1;
     display: grid;
-    grid-template-columns: auto 1em auto auto;
-    /* gap: 0.5rem; */
-    border: 1px solid red;
+    grid-template-columns: auto 1em;
+    gap: 0.5rem;
 }
 
 main #modal form .form-section input[type="checkbox"] {
@@ -78,11 +77,13 @@ main #books-wrapper {
 }
 
 main #books-wrapper .card {
+    font-size: 1.5rem;
     padding: 8px;
     background-color: #add8e6;
     border-radius: 8px;
 }
 
-main #books-wrapper .card {
-    font-size: 1.5rem;
+main #books-wrapper .card .delete-btn{
+    background-color: #ff0000;
+    margin-top: 16px;
 }

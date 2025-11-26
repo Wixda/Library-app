@@ -98,12 +98,13 @@ submitBtn.addEventListener('click', () => {
 function displayParagraph (book) {
     let newCard = document.createElement("div");
     newCard.classList.add('card');
+    newCard.dataset.id = book.id;
     
     let newTitle = document.createElement('p');
     newTitle.classList.add('card-section');
     newTitle.textContent = `Title: ${book.title}`
     newCard.appendChild(newTitle);
-        
+    
     let newAuthor = document.createElement('p');
     newAuthor.classList.add('card-section');
     newAuthor.textContent = `Author: ${book.author}`;
@@ -113,6 +114,21 @@ function displayParagraph (book) {
     newPages.classList.add('card-section');
     newPages.textContent = `${book.pages} pages`;
     newCard.appendChild(newPages);
+
+    let deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.textContent = "Delete";
+    newCard.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', () => {
+        const parentElement = event.target.parentNode;
+        const itemToBeRemoved = parentElement.dataset.id;
+        myLibrary.splice(myLibrary.findIndex(storedBook => storedBook.id === itemToBeRemoved), 1)
+        parentElement.remove();
+    })
         
     mainWrapper.appendChild(newCard);
+}
+
+function deleteCard() {
 }
