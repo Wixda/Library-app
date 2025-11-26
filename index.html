@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="logo">LIBRARY</h1>
+    </header>
+    <main id="main-body">
+        <button id="open-modal">New Book +</button>
+        <dialog id="modal">
+            <div id="modal-wrapper">
+
+                <button id="close-modal">X</button>
+                <h2>Add Book details </h2>
+                <form action="" method="dialog"> 
+                    <div class="form-section">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    
+                    <div class="form-section">
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" required>
+                    </div>
+                    
+                    <div class="form-section">
+                        <label for="pages">Pages:</label>
+                        <input type="number" name="pages" id="pages" required>
+                    </div>
+
+                    <div class="form-section" id="read-status-section">
+                        <label for="read-status" id="checkbox-control">Read status:
+                            <input type="checkbox" name="read-status" id="read-status">
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submit" disabled>Add Book +</button>
+                    
+                </form>
+            </div>
+        </dialog>
+
+        <div id="books-wrapper">
+
+        </div>
+    </main>
+</body>
+</html>

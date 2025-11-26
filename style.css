@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px 0 #808080;
+}
+
+header #logo {
+    font-family: monospace;
+    color: #008000;
+}
+
+main {
+    padding-top: 16px;
+}
+
+main #open-modal {
+    display: block;
+    margin: 0 auto;
+}
+
+main button {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    background-color: #008000;
+    border: none;
+}
+
+main #open-modal {
+    margin-bottom: 1.5rem;
+}
+
+main #modal-wrapper {
+    padding: 1rem;
+    text-align: center;
+}
+
+main #modal #close-modal {
+    align-self: flex-end;
+}
+
+main #modal form .form-section {
+    margin: 1rem 0;
+}
+
+main #modal form .form-section #checkbox-control {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: auto 1em auto auto;
+    /* gap: 0.5rem; */
+    border: 1px solid red;
+}
+
+main #modal form .form-section input[type="checkbox"] {
+    cursor: pointer;
+}
+
+main #books-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+main #books-wrapper .card {
+    padding: 8px;
+    background-color: #add8e6;
+    border-radius: 8px;
+}
+
+main #books-wrapper .card {
+    font-size: 1.5rem;
+}
