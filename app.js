@@ -41,6 +41,13 @@ function Book (id, title, author, pages, haveRead) {
     }
 }
 
+// This function toggles a book instance's read status
+Book.prototype.toggleReadStatus = function(){
+    // change the haveRead value to the opposite value
+    this.haveRead = !this.haveRead;
+}
+
+// This function adds book to the library array
 function addBookToLibrary (newTitle, newAuthor, newPages, haveRead) {
     // The next line create a random string and assigns them to ID so that it's unique
     const id = self.crypto.randomUUID();
@@ -95,19 +102,21 @@ submitBtn.addEventListener('click', () => {
 })
 
 
+
 function displayParagraph (book) {
+    // This create the card where the items will be displayed
     let newCard = document.createElement("div");
     newCard.classList.add('card');
     newCard.dataset.id = book.id;
     
     let newTitle = document.createElement('p');
     newTitle.classList.add('card-section');
-    newTitle.textContent = `Title: ${book.title}`
+    newTitle.textContent = `"${book.title}"`
     newCard.appendChild(newTitle);
     
     let newAuthor = document.createElement('p');
     newAuthor.classList.add('card-section');
-    newAuthor.textContent = `Author: ${book.author}`;
+    newAuthor.textContent = book.author;
     newCard.appendChild(newAuthor);
     
     let newPages = document.createElement('p');
@@ -115,11 +124,35 @@ function displayParagraph (book) {
     newPages.textContent = `${book.pages} pages`;
     newCard.appendChild(newPages);
 
+    let statusBtn = document.createElement('button');
+    statusBtn.addEventListener('click', () => {
+        book.toggleReadStatus();
+        if (book.haveRead) {
+            statusBtn.classList.add('completed');
+            statusBtn.textContent = "Not Read";
+        } else {    
+            statusBtn.classList.remove('completed');
+            statusBtn.textContent = "Read";
+        }
+    })
+
+    // Check the read status and display the appropriate color & text
+    if (book.haveRead) {
+        statusBtn.classList.add('completed');
+        statusBtn.textContent = "Not Read";
+    } else {    
+        statusBtn.textContent = "Read";
+    }
+
+    newCard.appendChild(statusBtn);
+
+    // The next block of code create the delete button
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete-btn');
     deleteBtn.textContent = "Delete";
     newCard.appendChild(deleteBtn);
 
+    // The next function create the delete button
     deleteBtn.addEventListener('click', () => {
         const parentElement = event.target.parentNode;
         const itemToBeRemoved = parentElement.dataset.id;

@@ -79,11 +79,20 @@ main #books-wrapper {
 main #books-wrapper .card {
     font-size: 1.5rem;
     padding: 8px;
+    text-align: center;
     background-color: #add8e6;
     border-radius: 8px;
 }
 
+main #books-wrapper .card button{
+    background-color: #008000;
+}
+
+main #books-wrapper .card button.completed{
+    background-color: #808080;
+}
+
 main #books-wrapper .card .delete-btn{
     background-color: #ff0000;
-    margin-top: 16px;
+    margin: 16px 8px 0;
 }
