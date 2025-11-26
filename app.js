@@ -88,7 +88,7 @@ form.addEventListener('input', () => {
     }
 })
 
-
+// This function runs when the user clicks the submit button in the modal
 submitBtn.addEventListener('click', () => {
     const userTitle = titleInput.value;
     const userAuthor = authorInput.value;
@@ -100,8 +100,6 @@ submitBtn.addEventListener('click', () => {
     addBookToLibrary(userTitle, userAuthor, userPages, userHasRead);
     displayParagraph(myLibrary[myLibrary.length - 1]);
 })
-
-
 
 function displayParagraph (book) {
     // This create the card where the items will be displayed
@@ -161,7 +159,4 @@ function displayParagraph (book) {
     })
         
     mainWrapper.appendChild(newCard);
-}
-
-function deleteCard() {
 }
